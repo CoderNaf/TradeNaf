@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+import { AppMain } from "@/pages/App";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { BiSolidBank } from "react-icons/bi";
 import { MdCurrencyExchange } from "react-icons/md";
@@ -20,10 +22,26 @@ function MainContent() {
             <menu className="flex flex-col gap-4 text-white">
                 <h2 className="font-source font-semibold text-lg">Menu</h2>
                     <ul className="font-monserrat flex flex-col gap-5">
-                        <li className="cursor-pointer w-[60%] flex items-center gap-2"><GoHomeFill/>dashboard</li>
-                        <li className="cursor-pointer w-[60%] flex items-center gap-2"><FiTrendingUp/>sinteticos</li>
-                        <li className="cursor-pointer w-[60%] flex items-center gap-2"><MdCurrencyExchange/>binarias</li>
-                        <li className="cursor-pointer w-[60%] flex items-center gap-2"><BiSolidBank/>forex</li>
+                        <NavLink to='/Dashboard'>
+                          <li className="cursor-pointer w-[60%] flex items-center gap-2"><GoHomeFill/>
+                            dashboard
+                          </li>
+                        </NavLink>
+                        <NavLink to="Indices Sinteticos">
+                          <li className="cursor-pointer w-[60%] flex items-center gap-2"><FiTrendingUp/>
+                            sinteticos
+                          </li>
+                        </NavLink>
+                        <NavLink to="Binarias">
+                          <li className="cursor-pointer w-[60%] flex items-center gap-2"><MdCurrencyExchange/>
+                            binarias
+                          </li>
+                        </NavLink>
+                        <NavLink to="Forex">
+                          <li className="cursor-pointer w-[60%] flex items-center gap-2"><BiSolidBank/> 
+                            forex
+                          </li>
+                        </NavLink>
                     </ul>
             </menu>
             <menu className="flex flex-col gap-5 font-source text-white">
@@ -49,8 +67,8 @@ function MainContent() {
           </div>
         </ResizablePanel>
         <ResizablePanel defaultSize={75}>
-          <div className="flex h-full items-center justify-center p-6">
-            <span className="font-semibold">Content</span>
+          <div className="flex h-full p-4">
+            <AppMain/>  
           </div>
         </ResizablePanel>
       </ResizablePanelGroup>
