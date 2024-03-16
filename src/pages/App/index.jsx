@@ -44,7 +44,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <MainContent/>
+          <MainContent/>
       </BrowserRouter>
     </>
   )
